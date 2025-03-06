@@ -1,0 +1,41 @@
+{
+  "name": "fc-node-challenge",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "type": "module",
+  "engines": {
+    "node": ">=23.X"
+  },
+  "scripts": {
+    "dev": "node src/index.ts --watch --experimental-strip-types --env-file=.env",
+    "build": "tsc --build",
+    "start": "node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luskas8/fc-node-challenge.git"
+  },
+  "keywords": [
+    "node",
+    "fullcycle",
+    "challenge",
+    "nginx",
+    "mysql"
+  ],
+  "author": "luskas8",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luskas8/fc-node-challenge/issues"
+  },
+  "homepage": "https://github.com/luskas8/fc-node-challenge#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@tsconfig/node23": "^23.0.0",
+    "@types/express": "^5.0.0",
+    "typescript": "^5.8.2"
+  }
+}
