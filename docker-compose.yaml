@@ -1,10 +1,21 @@
 services:
+  nginx:
+    container_name: nginx
+    build:
+      context: ./nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+    networks:
+      - app-network
+    depends_on:
+      - node
+
   node:
     container_name: node
     build:
       context: ./node
-    ports:
-      - "8001:8001"
     volumes:
       - ./node:/usr/src/app
     networks:
@@ -15,8 +26,7 @@ services:
   db:
     container_name: mysql
     build:
-      context: .
-      dockerfile: Dockerfile.db
+      context: ./db
     command: --innodb-use-native-aio=0
     restart: always
     tty: true
@@ -30,7 +40,7 @@ services:
     networks:
       - app-network
     volumes:
-      - ./db:/var/lib/mysql
+      - ./db/mysql-data:/var/lib/mysql
 
 volumes:
   db:
