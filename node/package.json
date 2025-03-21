@@ -7,9 +7,7 @@
     "node": ">=23.X"
   },
   "scripts": {
-    "dev": "node src/index.ts --watch --experimental-strip-types --env-file=.env",
-    "build": "tsc --build",
-    "start": "node dist/index.js",
+    "start": "node src/index.ts --watch --experimental-strip-types --env-file=.env",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -31,7 +29,9 @@
   "homepage": "https://github.com/luskas8/fc-node-challenge#readme",
   "description": "",
   "dependencies": {
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "mysql2": "^3.14.0",
+    "sequelize": "^6.37.6"
   },
   "devDependencies": {
     "@tsconfig/node23": "^23.0.0",
